@@ -1,0 +1,13 @@
+[project]
+name = "embedding-comparison"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.2",
+    "openai>=1.97.1",
+    "scikit-learn>=1.7.1",
+    "sentence-transformers>=5.0.0",
+    "torch>=2.7.1",
+]

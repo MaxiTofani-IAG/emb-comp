@@ -1,0 +1,11 @@
+[
+  "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+  
+  "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+  
+  "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+  
+  "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+  
+  "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+]

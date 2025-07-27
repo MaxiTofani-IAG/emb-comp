@@ -1,0 +1,278 @@
+[
+  {
+    "query": "nose wheel replacement",
+    "timestamp": "2025-07-27T21:22:25.259764",
+    "documents": [
+      "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+      "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+      "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+      "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+      "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+    ],
+    "similarities": {
+      "minilm": [
+        -0.008210185915231705,
+        0.6196279525756836,
+        0.07752972841262817,
+        0.13843660056591034,
+        0.13400059938430786
+      ],
+      "mpnet": [
+        0.07356943190097809,
+        0.7176291942596436,
+        0.19971925020217896,
+        0.21046800911426544,
+        0.17546036839485168
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.1342182159423828,
+      "mpnet_time": 0.4084763526916504,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "speaker potentiometer fault",
+    "timestamp": "2025-07-27T21:22:25.655615",
+    "documents": [
+      "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+      "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+      "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+      "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+      "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+    ],
+    "similarities": {
+      "minilm": [
+        0.1949019730091095,
+        0.07209433615207672,
+        0.6485618948936462,
+        0.35930025577545166,
+        0.0431063286960125
+      ],
+      "mpnet": [
+        0.18239028751850128,
+        0.2325727939605713,
+        0.7087889909744263,
+        0.5284247398376465,
+        0.11616084724664688
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.07489323616027832,
+      "mpnet_time": 0.31414270401000977,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "FCU reset procedure",
+    "timestamp": "2025-07-27T21:22:26.050116",
+    "documents": [
+      "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+      "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+      "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+      "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+      "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+    ],
+    "similarities": {
+      "minilm": [
+        0.5648384094238281,
+        0.14360126852989197,
+        0.07263341546058655,
+        0.22897452116012573,
+        0.20996157824993134
+      ],
+      "mpnet": [
+        0.5693665742874146,
+        0.1662362813949585,
+        0.08224645256996155,
+        0.16509319841861725,
+        0.19403837621212006
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.0659174919128418,
+      "mpnet_time": 0.3125889301300049,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "loudspeaker malfunction",
+    "timestamp": "2025-07-27T21:22:26.452261",
+    "documents": [
+      "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+      "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+      "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+      "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+      "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+    ],
+    "similarities": {
+      "minilm": [
+        0.12925398349761963,
+        0.044567376375198364,
+        0.6362906098365784,
+        0.45961523056030273,
+        0.0018156133592128754
+      ],
+      "mpnet": [
+        0.2001919150352478,
+        0.2041817605495453,
+        0.7341460585594177,
+        0.6899100542068481,
+        0.1441422700881958
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.07976436614990234,
+      "mpnet_time": 0.3119804859161377,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "landing gear extension",
+    "timestamp": "2025-07-27T21:22:27.196389",
+    "documents": [
+      "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+      "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+      "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+      "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+      "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+    ],
+    "similarities": {
+      "minilm": [
+        0.12129101902246475,
+        0.24459350109100342,
+        0.004646452143788338,
+        0.1537870466709137,
+        0.6695008873939514
+      ],
+      "mpnet": [
+        0.0866386666893959,
+        0.23860864341259003,
+        -0.013294192031025887,
+        0.03593768924474716,
+        0.5392088890075684
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.11894059181213379,
+      "mpnet_time": 0.5996813774108887,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "engine oil pressure",
+    "timestamp": "2025-07-27T21:22:28.201471",
+    "documents": [
+      "Text: AUTO FLT FCU 1 fault on descent (EI-724). QRH reset carried out in flight, successful. | Actions: RESET PER QRH PROCEDURE. SYSTEM OPERATIONAL. | ATA: 22-96",
+      "Text: Nose wheel worn to limits. | Actions: REPLACED NOSE WHEEL IAW AMM 32-41-12 PB 400 RIGHT HAND | ATA: 32-41",
+      "Text: Loudspeaker not working. | Actions: POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25. | ATA: 23-51",
+      "Text: Loudspeaker confirmed unserviceable. Referenced MEL 23-51-04A. | Actions: CALLED FOR SPARES IAW MEL PROCEDURE. | ATA: 23-51 | MEL: 23-51-04A",
+      "Text: Landing gear extension test completed. | Actions: EXTENSION CHECK COMPLETED. SYSTEMS OPERATIONAL. | ATA: 32-00"
+    ],
+    "similarities": {
+      "minilm": [
+        -0.0029281191527843475,
+        -0.000390809029340744,
+        -0.016292773187160492,
+        -0.04193222150206566,
+        0.006378278136253357
+      ],
+      "mpnet": [
+        0.06716959178447723,
+        0.22072993218898773,
+        0.12390471249818802,
+        0.060091935098171234,
+        0.106548011302948
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.25135159492492676,
+      "mpnet_time": 0.7327976226806641,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  }
+]

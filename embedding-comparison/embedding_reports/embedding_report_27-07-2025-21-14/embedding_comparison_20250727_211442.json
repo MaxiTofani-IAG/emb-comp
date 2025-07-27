@@ -1,0 +1,278 @@
+[
+  {
+    "query": "nose wheel replacement",
+    "timestamp": "2025-07-27T21:14:43.152807",
+    "documents": [
+      "ON DESCENT ( EI-724) AUTO FLT FCU 1 FAULT. QRH RESET CARRIED OUT-IN FLIGHT. RESET SUCCESSFUL.",
+      "ENG ENTRY #1 NOSE WHEEL WORN TO LIMITS",
+      "POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25 REFERS.",
+      "CONFIRMED LOUDSPEAKER FUNCTION U/S. C/F FOR SPARES IAW MEL 23-51-04A",
+      "LANDING GEAR EXTENSION CHECK COMPLETED. ALL SYSTEMS OPERATIONAL."
+    ],
+    "similarities": {
+      "minilm": [
+        -0.023559242486953735,
+        0.6768162846565247,
+        0.14785996079444885,
+        0.17804501950740814,
+        0.14109575748443604
+      ],
+      "mpnet": [
+        0.02890363708138466,
+        0.664492130279541,
+        0.2241753339767456,
+        0.2434636950492859,
+        0.15894407033920288
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.10083293914794922,
+      "mpnet_time": 0.32027649879455566,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "speaker potentiometer fault",
+    "timestamp": "2025-07-27T21:14:43.402634",
+    "documents": [
+      "ON DESCENT ( EI-724) AUTO FLT FCU 1 FAULT. QRH RESET CARRIED OUT-IN FLIGHT. RESET SUCCESSFUL.",
+      "ENG ENTRY #1 NOSE WHEEL WORN TO LIMITS",
+      "POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25 REFERS.",
+      "CONFIRMED LOUDSPEAKER FUNCTION U/S. C/F FOR SPARES IAW MEL 23-51-04A",
+      "LANDING GEAR EXTENSION CHECK COMPLETED. ALL SYSTEMS OPERATIONAL."
+    ],
+    "similarities": {
+      "minilm": [
+        0.2040833979845047,
+        0.08944961428642273,
+        0.6590999364852905,
+        0.4167758524417877,
+        0.08660643547773361
+      ],
+      "mpnet": [
+        0.17121171951293945,
+        0.12310023605823517,
+        0.8105596899986267,
+        0.4392527937889099,
+        0.07221944630146027
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.05488181114196777,
+      "mpnet_time": 0.18507766723632812,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "FCU reset procedure",
+    "timestamp": "2025-07-27T21:14:43.681781",
+    "documents": [
+      "ON DESCENT ( EI-724) AUTO FLT FCU 1 FAULT. QRH RESET CARRIED OUT-IN FLIGHT. RESET SUCCESSFUL.",
+      "ENG ENTRY #1 NOSE WHEEL WORN TO LIMITS",
+      "POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25 REFERS.",
+      "CONFIRMED LOUDSPEAKER FUNCTION U/S. C/F FOR SPARES IAW MEL 23-51-04A",
+      "LANDING GEAR EXTENSION CHECK COMPLETED. ALL SYSTEMS OPERATIONAL."
+    ],
+    "similarities": {
+      "minilm": [
+        0.5802983641624451,
+        0.06227150931954384,
+        0.13747252523899078,
+        0.1518193930387497,
+        0.21778905391693115
+      ],
+      "mpnet": [
+        0.5672844052314758,
+        0.06609395146369934,
+        0.07242574542760849,
+        0.13539031147956848,
+        0.21078775823116302
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.05115628242492676,
+      "mpnet_time": 0.209122896194458,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "loudspeaker malfunction",
+    "timestamp": "2025-07-27T21:14:44.206612",
+    "documents": [
+      "ON DESCENT ( EI-724) AUTO FLT FCU 1 FAULT. QRH RESET CARRIED OUT-IN FLIGHT. RESET SUCCESSFUL.",
+      "ENG ENTRY #1 NOSE WHEEL WORN TO LIMITS",
+      "POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25 REFERS.",
+      "CONFIRMED LOUDSPEAKER FUNCTION U/S. C/F FOR SPARES IAW MEL 23-51-04A",
+      "LANDING GEAR EXTENSION CHECK COMPLETED. ALL SYSTEMS OPERATIONAL."
+    ],
+    "similarities": {
+      "minilm": [
+        0.14311553537845612,
+        0.01826317422091961,
+        0.41492515802383423,
+        0.623765766620636,
+        0.026751693338155746
+      ],
+      "mpnet": [
+        0.17656412720680237,
+        0.11968643218278885,
+        0.5486649870872498,
+        0.6328029036521912,
+        0.0997336208820343
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.07859992980957031,
+      "mpnet_time": 0.43119287490844727,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "landing gear extension",
+    "timestamp": "2025-07-27T21:14:44.822913",
+    "documents": [
+      "ON DESCENT ( EI-724) AUTO FLT FCU 1 FAULT. QRH RESET CARRIED OUT-IN FLIGHT. RESET SUCCESSFUL.",
+      "ENG ENTRY #1 NOSE WHEEL WORN TO LIMITS",
+      "POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25 REFERS.",
+      "CONFIRMED LOUDSPEAKER FUNCTION U/S. C/F FOR SPARES IAW MEL 23-51-04A",
+      "LANDING GEAR EXTENSION CHECK COMPLETED. ALL SYSTEMS OPERATIONAL."
+    ],
+    "similarities": {
+      "minilm": [
+        0.13426056504249573,
+        0.3401368260383606,
+        0.05058218538761139,
+        0.15671007335186005,
+        0.7455286979675293
+      ],
+      "mpnet": [
+        0.06877993792295456,
+        0.29196685552597046,
+        0.01590745523571968,
+        0.11369204521179199,
+        0.6450468897819519
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.15636897087097168,
+      "mpnet_time": 0.42999267578125,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  },
+  {
+    "query": "engine oil pressure",
+    "timestamp": "2025-07-27T21:14:45.362980",
+    "documents": [
+      "ON DESCENT ( EI-724) AUTO FLT FCU 1 FAULT. QRH RESET CARRIED OUT-IN FLIGHT. RESET SUCCESSFUL.",
+      "ENG ENTRY #1 NOSE WHEEL WORN TO LIMITS",
+      "POTENTIOMETER REPLACED AND SPEAKER TESTED SERVICEABLE. AIPC 23-51-08 REV 5/25 REFERS.",
+      "CONFIRMED LOUDSPEAKER FUNCTION U/S. C/F FOR SPARES IAW MEL 23-51-04A",
+      "LANDING GEAR EXTENSION CHECK COMPLETED. ALL SYSTEMS OPERATIONAL."
+    ],
+    "similarities": {
+      "minilm": [
+        -0.025095459073781967,
+        0.021061506122350693,
+        0.0025162138044834137,
+        -0.06462910771369934,
+        -0.02217750996351242
+      ],
+      "mpnet": [
+        0.019070766866207123,
+        0.22449439764022827,
+        0.14053767919540405,
+        0.09821368753910065,
+        0.05650624632835388
+      ]
+    },
+    "performance": {
+      "minilm_time": 0.10689926147460938,
+      "mpnet_time": 0.40164804458618164,
+      "azure_ada_time": 0
+    },
+    "model_info": {
+      "minilm": {
+        "dimensions": 384,
+        "model": "all-MiniLM-L6-v2"
+      },
+      "mpnet": {
+        "dimensions": 768,
+        "model": "all-mpnet-base-v2"
+      },
+      "azure_ada": {
+        "dimensions": 1536,
+        "model": "text-embedding-ada-002"
+      }
+    }
+  }
+]

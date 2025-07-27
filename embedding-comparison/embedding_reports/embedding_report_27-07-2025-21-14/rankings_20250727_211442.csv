@@ -1,0 +1,61 @@
+query,model,rank,document_id,similarity,confidence_level
+nose wheel replacement,MINILM,1,2,0.6768,🟢 Strong Match
+nose wheel replacement,MINILM,2,4,0.178,🔴 Weak Match
+nose wheel replacement,MINILM,3,3,0.1479,🔴 Weak Match
+nose wheel replacement,MINILM,4,5,0.1411,🔴 Weak Match
+nose wheel replacement,MINILM,5,1,-0.0236,🔴 Weak Match
+nose wheel replacement,MPNET,1,2,0.6645,🟢 Strong Match
+nose wheel replacement,MPNET,2,4,0.2435,🔴 Weak Match
+nose wheel replacement,MPNET,3,3,0.2242,🔴 Weak Match
+nose wheel replacement,MPNET,4,5,0.1589,🔴 Weak Match
+nose wheel replacement,MPNET,5,1,0.0289,🔴 Weak Match
+speaker potentiometer fault,MINILM,1,3,0.6591,🟢 Strong Match
+speaker potentiometer fault,MINILM,2,4,0.4168,🟡 Good Match
+speaker potentiometer fault,MINILM,3,1,0.2041,🔴 Weak Match
+speaker potentiometer fault,MINILM,4,2,0.0894,🔴 Weak Match
+speaker potentiometer fault,MINILM,5,5,0.0866,🔴 Weak Match
+speaker potentiometer fault,MPNET,1,3,0.8106,🟢 Strong Match
+speaker potentiometer fault,MPNET,2,4,0.4393,🔴 Weak Match
+speaker potentiometer fault,MPNET,3,1,0.1712,🔴 Weak Match
+speaker potentiometer fault,MPNET,4,2,0.1231,🔴 Weak Match
+speaker potentiometer fault,MPNET,5,5,0.0722,🔴 Weak Match
+FCU reset procedure,MINILM,1,1,0.5803,🟡 Good Match
+FCU reset procedure,MINILM,2,5,0.2178,🔴 Weak Match
+FCU reset procedure,MINILM,3,4,0.1518,🔴 Weak Match
+FCU reset procedure,MINILM,4,3,0.1375,🔴 Weak Match
+FCU reset procedure,MINILM,5,2,0.0623,🔴 Weak Match
+FCU reset procedure,MPNET,1,1,0.5673,🟡 Good Match
+FCU reset procedure,MPNET,2,5,0.2108,🔴 Weak Match
+FCU reset procedure,MPNET,3,4,0.1354,🔴 Weak Match
+FCU reset procedure,MPNET,4,3,0.0724,🔴 Weak Match
+FCU reset procedure,MPNET,5,2,0.0661,🔴 Weak Match
+loudspeaker malfunction,MINILM,1,4,0.6238,🟢 Strong Match
+loudspeaker malfunction,MINILM,2,3,0.4149,🟡 Good Match
+loudspeaker malfunction,MINILM,3,1,0.1431,🔴 Weak Match
+loudspeaker malfunction,MINILM,4,5,0.0268,🔴 Weak Match
+loudspeaker malfunction,MINILM,5,2,0.0183,🔴 Weak Match
+loudspeaker malfunction,MPNET,1,4,0.6328,🟡 Good Match
+loudspeaker malfunction,MPNET,2,3,0.5487,🟡 Good Match
+loudspeaker malfunction,MPNET,3,1,0.1766,🔴 Weak Match
+loudspeaker malfunction,MPNET,4,2,0.1197,🔴 Weak Match
+loudspeaker malfunction,MPNET,5,5,0.0997,🔴 Weak Match
+landing gear extension,MINILM,1,5,0.7455,🟢 Strong Match
+landing gear extension,MINILM,2,2,0.3401,🔴 Weak Match
+landing gear extension,MINILM,3,4,0.1567,🔴 Weak Match
+landing gear extension,MINILM,4,1,0.1343,🔴 Weak Match
+landing gear extension,MINILM,5,3,0.0506,🔴 Weak Match
+landing gear extension,MPNET,1,5,0.645,🟡 Good Match
+landing gear extension,MPNET,2,2,0.292,🔴 Weak Match
+landing gear extension,MPNET,3,4,0.1137,🔴 Weak Match
+landing gear extension,MPNET,4,1,0.0688,🔴 Weak Match
+landing gear extension,MPNET,5,3,0.0159,🔴 Weak Match
+engine oil pressure,MINILM,1,2,0.0211,🔴 Weak Match
+engine oil pressure,MINILM,2,3,0.0025,🔴 Weak Match
+engine oil pressure,MINILM,3,5,-0.0222,🔴 Weak Match
+engine oil pressure,MINILM,4,1,-0.0251,🔴 Weak Match
+engine oil pressure,MINILM,5,4,-0.0646,🔴 Weak Match
+engine oil pressure,MPNET,1,2,0.2245,🔴 Weak Match
+engine oil pressure,MPNET,2,3,0.1405,🔴 Weak Match
+engine oil pressure,MPNET,3,4,0.0982,🔴 Weak Match
+engine oil pressure,MPNET,4,5,0.0565,🔴 Weak Match
+engine oil pressure,MPNET,5,1,0.0191,🔴 Weak Match

@@ -1,0 +1,46 @@
+{
+  "models": {
+    "minilm": {
+      "name": "all-MiniLM-L6-v2",
+      "dimensions": 384,
+      "description": "Modelo rápido y eficiente para casos simples"
+    },
+    "mpnet": {
+      "name": "all-mpnet-base-v2", 
+      "dimensions": 768,
+      "description": "Modelo balanceado entre velocidad y precisión"
+    },
+    "azure_ada": {
+      "name": "text-embedding-ada-002",
+      "dimensions": 1536,
+      "description": "Modelo de alta calidad pero costoso"
+    }
+  },
+  "confidence_thresholds": {
+    "minilm": {
+      "high": 0.60,
+      "medium": 0.40,
+      "description": "Más conservador"
+    },
+    "mpnet": {
+      "high": 0.65,
+      "medium": 0.45,
+      "description": "Ligeramente mejor"
+    },
+    "azure_ada": {
+      "high": 0.70,
+      "medium": 0.50,
+      "description": "El más exigente"
+    }
+  },
+  "output_settings": {
+    "default_output_dir": "embedding_reports",
+    "include_timestamp": true,
+    "generate_all_reports": true
+  },
+  "azure_openai": {
+    "enabled": false,
+    "api_version": "2024-08-01-preview",
+    "deployment_name": "text-embedding-ada-002"
+  }
+} 

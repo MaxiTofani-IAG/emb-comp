@@ -1,0 +1,49 @@
+REPORTE DE COMPARACIÓN DE EMBEDDINGS
+==================================================
+
+Fecha: 2025-07-27 21:14:45
+Total de queries analizadas: 6
+
+ESTADÍSTICAS POR MODELO:
+------------------------------
+
+MINILM:
+  - Promedio: 0.2097
+  - Máximo: 0.7455
+  - Mínimo: -0.0646
+  - Total de scores: 30
+
+MPNET:
+  - Promedio: 0.2413
+  - Máximo: 0.8106
+  - Mínimo: 0.0159
+  - Total de scores: 30
+
+PERFORMANCE:
+--------------------
+Tiempo total MiniLM: 0.549s
+Tiempo total MPNet: 1.977s
+
+RECOMENDACIONES:
+--------------------
+
+1. CALIDAD:
+   - mpnet-base-v2: Generalmente mejor precisión
+   - MiniLM-L6-v2: Buena para casos simples
+   - OpenAI Ada: Mejor calidad pero costoso
+
+2. PERFORMANCE:
+   - MiniLM-L6-v2: Más rápido, menos memoria
+   - mpnet-base-v2: Más lento, más memoria
+   - OpenAI Ada: Latencia de API + costos
+
+3. STORAGE:
+   - MiniLM-L6-v2: 384 dims = menos espacio
+   - mpnet-base-v2: 768 dims = doble espacio
+   - OpenAI Ada: 1536 dims = 4x espacio
+
+RECOMENDACIÓN:
+- Para POC: Prueba mpnet-base-v2 si performance no es crítica
+- Para producción: Evalúa trade-off calidad vs velocidad
+- OpenAI Ada: Solo si calidad es crítica y budget lo permite
+            
