@@ -39,8 +39,8 @@
     "generate_all_reports": true
   },
   "text_processing": {
-    "normalize_to_lowercase": true,
-    "description": "Convierte todo el texto a minúsculas antes de generar embeddings para mayor consistencia"
+    "normalize_to_lowercase": false,
+    "description": "Mantiene la capitalización original del texto"
   },
   "azure_openai": {
     "enabled": false,

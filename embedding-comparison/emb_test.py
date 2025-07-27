@@ -63,15 +63,24 @@ class EmbeddingComparator:
         """Genera embeddings con todos los modelos"""
         results = {}
         
+        # Verificar si debemos normalizar a minúsculas
+        normalize_lowercase = self.config.get('text_processing', {}).get('normalize_to_lowercase', False)
+        
+        if normalize_lowercase:
+            print("🔄 Normalizando textos a minúsculas...")
+            processed_texts = [text.lower() for text in texts]
+        else:
+            processed_texts = texts
+        
         # Sentence Transformers
         print("Generando embeddings con MiniLM-L6-v2...")
         start_time = time.time()
-        results['minilm'] = self.model_small.encode(texts, normalize_embeddings=True)
+        results['minilm'] = self.model_small.encode(processed_texts, normalize_embeddings=True)
         results['minilm_time'] = time.time() - start_time
         
         print("Generando embeddings con mpnet-base-v2...")
         start_time = time.time()
-        results['mpnet'] = self.model_large.encode(texts, normalize_embeddings=True)
+        results['mpnet'] = self.model_large.encode(processed_texts, normalize_embeddings=True)
         results['mpnet_time'] = time.time() - start_time
         
         # Azure OpenAI Ada (opcional - descomenta si tienes configuración)
@@ -91,7 +100,7 @@ class EmbeddingComparator:
             azure_embeddings = []
             deployment_name = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME", "text-embedding-ada-002")
             
-            for text in texts:
+            for text in processed_texts:
                 response = client.embeddings.create(
                     input=text,
                     model=deployment_name
@@ -157,6 +166,10 @@ class EmbeddingComparator:
             'timestamp': datetime.now().isoformat(),
             'documents': documents,
             'similarities': similarities,
+            'text_processing': {
+                'normalize_to_lowercase': self.config.get('text_processing', {}).get('normalize_to_lowercase', False),
+                'description': 'Normalización de texto aplicada antes de generar embeddings'
+            },
             'performance': {
                 'minilm_time': embeddings.get('minilm_time', 0),
                 'mpnet_time': embeddings.get('mpnet_time', 0),
@@ -385,6 +398,15 @@ RECOMENDACIÓN:
     
     def print_results(self, query: str, documents: List[str], similarities: Dict, embeddings: Dict):
         """Imprime resultados comparativos"""
+        
+        # Información de procesamiento de texto
+        normalize_lowercase = self.config.get('text_processing', {}).get('normalize_to_lowercase', False)
+        if normalize_lowercase:
+            print(f"\n📝 PROCESAMIENTO DE TEXTO:")
+            print(f"✅ Normalización a minúsculas: ACTIVADA")
+        else:
+            print(f"\n📝 PROCESAMIENTO DE TEXTO:")
+            print(f"❌ Normalización a minúsculas: DESACTIVADA")
         
         # Información de modelos
         print(f"\nINFORMACIÓN DE MODELOS:")

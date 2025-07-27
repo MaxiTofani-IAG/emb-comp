@@ -5,6 +5,7 @@ Sistema completo para comparar diferentes modelos de embeddings y generar report
 ## 🚀 Características
 
 - **Múltiples Modelos**: Compara MiniLM-L6-v2, MPNet-base-v2 y Azure OpenAI Ada-002
+- **Normalización de Texto**: Opción para convertir texto a minúsculas antes de generar embeddings
 - **Reportes Automáticos**: Genera reportes en JSON, CSV y texto
 - **Organización por Sesiones**: Cada ejecución se guarda en una carpeta con fecha y hora
 - **Gestión de Sesiones**: Script para navegar y comparar sesiones anteriores
@@ -84,8 +85,41 @@ Edita los archivos en `data/`:
   },
   "output_settings": {
     "default_output_dir": "my_reports"
+  },
+  "text_processing": {
+    "normalize_to_lowercase": true,
+    "description": "Convierte todo el texto a minúsculas antes de generar embeddings"
   }
 }
+```
+
+### 4. Configuración de Normalización de Texto
+
+El sistema incluye una opción para normalizar el texto a minúsculas antes de generar embeddings, lo que puede mejorar la consistencia de los resultados.
+
+**Configuración con normalización** (`data/config.json`):
+```json
+{
+  "text_processing": {
+    "normalize_to_lowercase": true,
+    "description": "Convierte todo el texto a minúsculas antes de generar embeddings"
+  }
+}
+```
+
+**Configuración sin normalización** (`data/config_no_normalize.json`):
+```json
+{
+  "text_processing": {
+    "normalize_to_lowercase": false,
+    "description": "Mantiene la capitalización original del texto"
+  }
+}
+```
+
+**Probar diferencias de normalización**:
+```bash
+uv run python test_normalization.py
 ```
 
 ## 🔧 Ejemplos Avanzados
