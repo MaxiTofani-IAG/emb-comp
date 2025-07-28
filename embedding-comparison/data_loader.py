@@ -22,12 +22,13 @@ class DataLoader:
         if not self.data_dir.exists():
             raise FileNotFoundError(f"Directorio de datos no encontrado: {data_dir}")
     
-    def load_work_orders(self, filename: str = "work_orders.json") -> List[str]:
+    def load_work_orders(self, filename: str = "work_orders.json", normalize_to_lowercase: bool = False) -> List[str]:
         """
         Carga los work orders desde un archivo JSON
         
         Args:
             filename: Nombre del archivo JSON con los work orders
+            normalize_to_lowercase: Si True, convierte todos los work orders a minúsculas
             
         Returns:
             Lista de strings con los work orders
@@ -49,7 +50,13 @@ class DataLoader:
                 if not isinstance(wo, str):
                     raise ValueError(f"Work order {i} no es un string: {type(wo)}")
             
-            print(f"✅ Cargados {len(work_orders)} work orders desde {filename}")
+            # Aplicar normalización si se solicita
+            if normalize_to_lowercase:
+                work_orders = [wo.lower() for wo in work_orders]
+                print(f"✅ Cargados {len(work_orders)} work orders desde {filename} (normalizados a minúsculas)")
+            else:
+                print(f"✅ Cargados {len(work_orders)} work orders desde {filename}")
+            
             return work_orders
             
         except json.JSONDecodeError as e:

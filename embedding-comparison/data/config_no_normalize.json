@@ -10,6 +10,11 @@
       "dimensions": 768,
       "description": "Modelo balanceado entre velocidad y precisión"
     },
+    "bge": {
+      "name": "BAAI/bge-small-en-v1.5",
+      "dimensions": 384,
+      "description": "Modelo BGE optimizado para embeddings de alta calidad"
+    },
     "azure_ada": {
       "name": "text-embedding-ada-002",
       "dimensions": 1536,
@@ -26,6 +31,11 @@
       "high": 0.65,
       "medium": 0.45,
       "description": "Ligeramente mejor"
+    },
+    "bge": {
+      "high": 0.68,
+      "medium": 0.48,
+      "description": "BGE optimizado para alta precisión"
     },
     "azure_ada": {
       "high": 0.70,

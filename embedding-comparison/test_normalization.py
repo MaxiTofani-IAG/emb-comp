@@ -26,6 +26,7 @@ def test_normalization_comparison():
     test_queries = data_loader.load_test_queries()
     
     # Queries de prueba específicas para capitalización
+    # Estas queries mantienen su capitalización original (no se normalizan)
     test_cases = [
         "LANDING GEAR EXTENSION",  # Todo mayúsculas
         "landing gear extension",  # Todo minúsculas
@@ -37,8 +38,8 @@ def test_normalization_comparison():
     
     # Configuraciones a probar
     configs = {
-        "Con normalización": "embedding-comparison/data/config.json",
-        "Sin normalización": "embedding-comparison/data/config_no_normalize.json"
+        "Con normalización": "data/config.json",
+        "Sin normalización": "data/config_no_normalize.json"
     }
     
     results = {}
@@ -68,7 +69,7 @@ def test_normalization_comparison():
             query_embeddings = {}
             doc_embeddings = {}
             
-            for model_name in ['minilm', 'mpnet']:
+            for model_name in ['minilm', 'mpnet', 'bge']:
                 if model_name in embeddings:
                     query_embeddings[model_name] = embeddings[model_name][0:1]
                     doc_embeddings[model_name] = embeddings[model_name][1:]
@@ -98,7 +99,7 @@ def test_normalization_comparison():
         print(f"\n🔍 Query: '{query}'")
         print("-" * 60)
         
-        for model_name in ['minilm', 'mpnet']:
+        for model_name in ['minilm', 'mpnet', 'bge']:
             print(f"\n{model_name.upper()}:")
             
             # Obtener top result para cada configuración
@@ -129,10 +130,10 @@ def test_normalization_comparison():
     print(f"\n{'='*80}")
     print("💡 CONCLUSIONES")
     print(f"{'='*80}")
-    print("1. La normalización a minúsculas puede afectar significativamente los embeddings")
-    print("2. Para queries con capitalización mixta, la normalización puede mejorar consistencia")
-    print("3. Para queries ya en minúsculas, el impacto es mínimo")
-    print("4. Se recomienda usar normalización para mayor consistencia en producción")
+    print("1. Las work orders se normalizan a minúsculas (si está configurado)")
+    print("2. Las queries del usuario mantienen su capitalización original")
+    print("3. Esto simula un sistema real donde la base de datos está normalizada")
+    print("4. La normalización de work orders mejora la consistencia de búsquedas")
     print("5. Los reportes se guardaron en carpetas separadas para análisis detallado")
 
 if __name__ == "__main__":

@@ -1,14 +1,22 @@
 ÍNDICE DE SESIONES DE EMBEDDING COMPARISON
 ==================================================
 
-Última actualización: 2025-07-27 21:22:28
-Total de sesiones: 2
+Última actualización: 2025-07-27 22:03:41
+Total de sesiones: 4
 
-1. 27-07-2025-21-22
+1. 27-07-2025-22-03
+   📁 Ruta: embedding_reports\embedding_report_27-07-2025-22-03
+   📄 Archivos: embedding_comparison_20250727_220338.json, rankings_20250727_220338.csv, similarity_scores_20250727_220338.csv, summary_20250727_220338.txt
+
+2. 27-07-2025-21-52
+   📁 Ruta: embedding_reports\embedding_report_27-07-2025-21-52
+   📄 Archivos: embedding_comparison_20250727_215251.json, rankings_20250727_215251.csv, similarity_scores_20250727_215251.csv, summary_20250727_215251.txt
+
+3. 27-07-2025-21-22
    📁 Ruta: embedding_reports\embedding_report_27-07-2025-21-22
    📄 Archivos: embedding_comparison_20250727_212224.json, rankings_20250727_212224.csv, similarity_scores_20250727_212224.csv, summary_20250727_212224.txt
 
-2. 27-07-2025-21-14
+4. 27-07-2025-21-14
    📁 Ruta: embedding_reports\embedding_report_27-07-2025-21-14
    📄 Archivos: embedding_comparison_20250727_211442.json, rankings_20250727_211442.csv, similarity_scores_20250727_211442.csv, summary_20250727_211442.txt
 

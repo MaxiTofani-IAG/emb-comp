@@ -8,3 +8,41 @@ wheels/
 
 # Virtual environments
 .venv
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# API keys and sensitive data
+.env
+*.key
+config_local.json
+
+# Model cache and downloads
+.cache/
+models/
+*.bin
+*.safetensors
+
+# Report directories (optional - remove if you want to track reports)
+embedding_reports/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Coverage reports
+htmlcov/
+.coverage

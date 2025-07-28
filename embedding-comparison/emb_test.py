@@ -40,6 +40,7 @@ class EmbeddingComparator:
         # Inicializar modelos
         self.model_small = SentenceTransformer(self.model_configs.get('minilm', {}).get('name', 'all-MiniLM-L6-v2'))
         self.model_large = SentenceTransformer(self.model_configs.get('mpnet', {}).get('name', 'all-mpnet-base-v2'))
+        self.model_bge = SentenceTransformer(self.model_configs.get('bge', {}).get('name', 'BAAI/bge-small-en-v1.5'))
         
         # Crear directorio base de reportes si no existe
         os.makedirs(output_dir, exist_ok=True)
@@ -63,25 +64,24 @@ class EmbeddingComparator:
         """Genera embeddings con todos los modelos"""
         results = {}
         
-        # Verificar si debemos normalizar a minúsculas
-        normalize_lowercase = self.config.get('text_processing', {}).get('normalize_to_lowercase', False)
-        
-        if normalize_lowercase:
-            print("🔄 Normalizando textos a minúsculas...")
-            processed_texts = [text.lower() for text in texts]
-        else:
-            processed_texts = texts
+        # Los textos ya vienen procesados según la configuración
+        # (work orders normalizados si está configurado, queries sin normalizar)
         
         # Sentence Transformers
         print("Generando embeddings con MiniLM-L6-v2...")
         start_time = time.time()
-        results['minilm'] = self.model_small.encode(processed_texts, normalize_embeddings=True)
+        results['minilm'] = self.model_small.encode(texts, normalize_embeddings=True)
         results['minilm_time'] = time.time() - start_time
         
         print("Generando embeddings con mpnet-base-v2...")
         start_time = time.time()
-        results['mpnet'] = self.model_large.encode(processed_texts, normalize_embeddings=True)
+        results['mpnet'] = self.model_large.encode(texts, normalize_embeddings=True)
         results['mpnet_time'] = time.time() - start_time
+        
+        print("Generando embeddings con BGE-small-en-v1.5...")
+        start_time = time.time()
+        results['bge'] = self.model_bge.encode(texts, normalize_embeddings=True)
+        results['bge_time'] = time.time() - start_time
         
         # Azure OpenAI Ada (opcional - descomenta si tienes configuración)
         """
@@ -117,7 +117,7 @@ class EmbeddingComparator:
         """Calcula similarities usando la misma métrica que pgvector: 1 - cosine_distance"""
         similarities = {}
         
-        for model_name in ['minilm', 'mpnet', 'azure_ada']:  # Agregado azure_ada
+        for model_name in ['minilm', 'mpnet', 'bge', 'azure_ada']:  # Agregado bge y azure_ada
             if model_name in query_emb and model_name in doc_embs:
                 # Calcular similitud coseno directamente (ya es similarity, no distance)
                 cosine_similarities = cosine_similarity(
@@ -142,7 +142,7 @@ class EmbeddingComparator:
         query_embeddings = {}
         doc_embeddings = {}
         
-        for model_name in ['minilm', 'mpnet', 'azure_ada']:  # Agregado azure_ada
+        for model_name in ['minilm', 'mpnet', 'bge', 'azure_ada']:  # Agregado bge y azure_ada
             if model_name in embeddings:
                 query_embeddings[model_name] = embeddings[model_name][0:1]
                 doc_embeddings[model_name] = embeddings[model_name][1:]
@@ -168,16 +168,18 @@ class EmbeddingComparator:
             'similarities': similarities,
             'text_processing': {
                 'normalize_to_lowercase': self.config.get('text_processing', {}).get('normalize_to_lowercase', False),
-                'description': 'Normalización de texto aplicada antes de generar embeddings'
+                'description': 'Work orders normalizadas a minúsculas, queries del usuario sin normalizar'
             },
             'performance': {
                 'minilm_time': embeddings.get('minilm_time', 0),
                 'mpnet_time': embeddings.get('mpnet_time', 0),
+                'bge_time': embeddings.get('bge_time', 0),
                 'azure_ada_time': embeddings.get('azure_ada_time', 0)
             },
             'model_info': {
                 'minilm': {'dimensions': 384, 'model': 'all-MiniLM-L6-v2'},
                 'mpnet': {'dimensions': 768, 'model': 'all-mpnet-base-v2'},
+                'bge': {'dimensions': 384, 'model': 'BAAI/bge-small-en-v1.5'},
                 'azure_ada': {'dimensions': 1536, 'model': 'text-embedding-ada-002'}
             }
         }
@@ -319,7 +321,7 @@ class EmbeddingComparator:
             f.write(f"Total de queries analizadas: {len(self.all_results)}\n\n")
             
             # Estadísticas por modelo
-            model_stats = {'minilm': [], 'mpnet': [], 'azure_ada': []}
+            model_stats = {'minilm': [], 'mpnet': [], 'bge': [], 'azure_ada': []}
             
             for result in self.all_results:
                 for model_name, sims in result['similarities'].items():
@@ -344,8 +346,10 @@ class EmbeddingComparator:
             f.write("-" * 20 + "\n")
             total_minilm_time = sum(r['performance']['minilm_time'] for r in self.all_results)
             total_mpnet_time = sum(r['performance']['mpnet_time'] for r in self.all_results)
+            total_bge_time = sum(r['performance']['bge_time'] for r in self.all_results)
             f.write(f"Tiempo total MiniLM: {total_minilm_time:.3f}s\n")
             f.write(f"Tiempo total MPNet: {total_mpnet_time:.3f}s\n")
+            f.write(f"Tiempo total BGE: {total_bge_time:.3f}s\n")
             
             # Recomendaciones
             f.write(f"\nRECOMENDACIONES:\n")
@@ -403,15 +407,18 @@ RECOMENDACIÓN:
         normalize_lowercase = self.config.get('text_processing', {}).get('normalize_to_lowercase', False)
         if normalize_lowercase:
             print(f"\n📝 PROCESAMIENTO DE TEXTO:")
-            print(f"✅ Normalización a minúsculas: ACTIVADA")
+            print(f"✅ Work orders normalizadas a minúsculas")
+            print(f"📝 Query del usuario: '{query}' (sin normalizar)")
         else:
             print(f"\n📝 PROCESAMIENTO DE TEXTO:")
-            print(f"❌ Normalización a minúsculas: DESACTIVADA")
+            print(f"❌ Work orders sin normalizar")
+            print(f"📝 Query del usuario: '{query}' (sin normalizar)")
         
         # Información de modelos
         print(f"\nINFORMACIÓN DE MODELOS:")
         print(f"- MiniLM-L6-v2: 384 dimensiones, tiempo: {embeddings.get('minilm_time', 0):.3f}s")
         print(f"- mpnet-base-v2: 768 dimensiones, tiempo: {embeddings.get('mpnet_time', 0):.3f}s")
+        print(f"- BGE-small-en-v1.5: 384 dimensiones, tiempo: {embeddings.get('bge_time', 0):.3f}s")
         if 'azure_ada_time' in embeddings:
             print(f"- Azure OpenAI Ada-002: 1536 dimensiones, tiempo: {embeddings.get('azure_ada_time', 0):.3f}s")
         
@@ -464,10 +471,15 @@ def main():
             create_sample_data()
             data_loader = DataLoader()  # Recargar después de crear datos
         
-        # Cargar work orders y queries
-        work_orders = data_loader.load_work_orders()
-        test_queries = data_loader.load_test_queries()
+        # Cargar configuración primero
         config = data_loader.load_config()
+        
+        # Cargar work orders con normalización si está configurado
+        normalize_work_orders = config.get('text_processing', {}).get('normalize_to_lowercase', False)
+        work_orders = data_loader.load_work_orders(normalize_to_lowercase=normalize_work_orders)
+        
+        # Cargar queries (sin normalizar - mantienen capitalización original del usuario)
+        test_queries = data_loader.load_test_queries()
         
         print(f"\n📊 Datos cargados:")
         print(f"   - Work orders: {len(work_orders)}")
